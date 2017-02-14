@@ -1,0 +1,21 @@
+#frame {
+	width:60%; 
+	position:absolute; 
+	left:20%; 
+	background-color:white;
+}
+#about {
+	
+}
+#projects {
+	
+}
+.sectiontitle {
+	font-size:32px;
+}
+.projectstable {
+	
+}
+.spacer {
+	height:20px;
+}
