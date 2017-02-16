@@ -1,21 +1,55 @@
+body {
+	background-image:
+		url("./img/bg.png");
+	/*
+	background-color:#222;*/
+}
 #frame {
-	width:60%; 
+	width:60%;
+	padding:20px;
 	position:absolute; 
 	left:20%; 
 	background-color:white;
+	font-family:courier;
+	border-style:solid;
+	border-width:0px;
+	border-color:gray;
+	border-left-width:1px;
+	border-right-width:1px;
 }
-#about {
-	
+#name {
+	font-size:72px;
+}
+#about td {
+	min-width:100px;
 }
 #projects {
 	
 }
+.contactinfo {
+	text-align:center;
+}
 .sectiontitle {
 	font-size:32px;
+	font-weight:bold;
 }
-.projectstable {
-	
+.projecttitle {
+	font-size:24px;
+	font-weight:bold;
+	padding-left:15px;
+}
+.projectcredits {
+	font-size:12px;
+	color:gray;
+	padding-left:15px;
+}
+.projectcontent {
+	vertical-align:text-top;
+	padding-left:15px;
+}
+.projectstable img{
+	width:250px;
 }
 .spacer {
-	height:20px;
+	
 }
