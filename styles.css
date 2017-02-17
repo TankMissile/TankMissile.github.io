@@ -3,12 +3,15 @@ body {
 		url("./img/bg.png");
 	
 	background-color:#222;
+	margin:0;
 }
 #frame {
 	width:60%;
+	min-width:800px;
 	padding:20px;
-	position:absolute; 
-	left:20%; 
+	
+	margin-left:auto;
+	margin-right:auto;
 	background-color:white;
 	font-family:courier;
 	border-style:solid;
@@ -26,8 +29,16 @@ body {
 #projects {
 	
 }
-.contactinfo {
+#contactinfo {
 	text-align:center;
+}
+.nav {
+	text-align:center;
+	padding-bottom:20px;
+}
+.nav a{
+	color:black;
+	font-size:18px;
 }
 .sectiontitle {
 	font-size:32px;
@@ -42,6 +53,7 @@ body {
 	font-size:12px;
 	color:gray;
 	padding-left:15px;
+	height:20px;
 }
 .projectcontent {
 	vertical-align:text-top;
@@ -50,6 +62,27 @@ body {
 .projectstable img{
 	width:250px;
 }
+.projectlinks {
+	padding-left:15px;
+	font-size:14px;
+	align:center;
+}
 .spacer {
 	
+}
+.gallery {
+	
+	text-align:center;
+}
+.gallery img {
+	max-width:100%;
+}
+.gallery hr {
+	color:black;
+	font-size:72px;
+}
+.caption {
+	text-size:24px;
+	font-weight:bold;
+	color:gray;
 }
