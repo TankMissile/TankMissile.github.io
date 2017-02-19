@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Dungeon Generator - About</title>
+	<link rel="stylesheet" href="../styles.css" />
+	<meta charset="UTF-8" />
+	<meta name="description" content="Resume page for Trevor Evans" />
+	<meta name="author" content="Trevor Evans" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+	<div id="frame">
+		<div class="nav">
+			<a href="../index.html">Return to Home</a>
+		</div>
+		<div id="name">Roguelike Dungeon Generator</div>
+		<br /><br />
+		<div style="text-align:center">
+			<img class="headerimg" src="../img/examplemap.png" />
+		</div>
+		<div class="standalonelinks">
+			<a href="../downloads/DungeonGenerator.zip" download>Download</a> | <a href="../galleries/dungeon.html">Screenshots</a> | 
+			<a href="https://github.com/TankMissile/DungeonGenerator" target="_blank">Git</a>
+		</div>
+		<p class="sectiontitle">Summary</p>
+		<p>
+			The Roguelike Dungeon Generator was a solo project written in Java, which uses various configurable parameters to generate a random dungeon.
+			It was meant to be a design test for a later rewrite in C++, to use with the Unreal 4 game engine. It implements the 
+			<a href="http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/" target="_blank">design scheme laid out by Bob Nystrom</a>, 
+			with some additions for room overlap capacity and trap placement.
+			<br /><br />
+			The program uses System.out to display the dungeon (meant exclusively for testing as this is designed for use as a subsystem of a larger game), 
+			so if you’re running the jar, I advise that you do so from the command line. It uses Unicode characters for Full Block and shaded blocks, which 
+			appear as ?’s in the Windows command line.
+		</p>
+		
+		<p class="sectiontitle">How To Use</p>
+		<p>
+			Run the jar from the command line, or open the project and run from eclipse. <br />
+			The map is generated to default parameters, but is dynamic within the code.  <br />
+			Some parameters are configurable through command line arguments, but not all.  The remaining arguments are under construction.
+		</p>
+		
+		<p class="subsectiontitle">Arguments</p>
+		<p>
+			<b>-w [val] :</b> Sets the width of the map.  I recommend not setting it higher than 100, as the hallway placement recursion causes a segmentation fault in excessively large maps.<br />
+			<b>-h [val] :</b> Sets the height of the map.  I recommend not setting this higher than 100 either. <br />
+			<b>-rw [val] :</b> Sets the minimum room width.  This can be no less than 1, and no greater than the map width, for obvious reasons.  If this is set higher than the maximum width, it will automatically replace the maximum width to itself. <br />
+			<b>-rW [val] :</b> Sets the maximum room width.  This can be no less than 1, and no greater than the map width, for obvious reasons.  If this is set lower than the minimum width, it will automatically replace the minimum width to itself. <br />
+			<b>-rh [val] :</b> Sets the minimum room height.  This can be no less than 1, and no greater than the map height, for obvious reasons.  If this is set higher than the maximum height, it will automatically replace the maximum height to itself. <br />
+			<b>-rH [val] :</b> Sets the maximum room height.  This can be no less than 1, and no greater than the map height, for obvious reasons.  If this is set lower than the minimum height, it will automatically replace the minimum height to itself. <br />
+		</p>
+		
+		<p class="subsectiontitle">Key</p>
+		<p>
+			<b> S :</b> Starting point, where a player character would spawn into the level.<br />
+			<b> + :</b> The level exit.<br />
+			<b>Shaded areas:</b> Acid pools, which deal damage to the player for every turn they remain in them.  
+			The darker the shading, the more damage it would deal.  A Number in the middle represents the strength of the acid pool, if greater than 3.<br />
+			<b>-#-:</b> A mine, which deals damage to the player once then disappears.  A higher number means more damage is done.  These might also have secondary effects.<br />
+			<b>B#x:</b> A Bug, which attaches to the player and continually applies its effect.  The x represents a varying letter, which tells you which type of bug it is.  
+			Current types are b (bits/money), m (memory/party slot), and r (return/kick party members).  These were modeled after Digimon World 2, which inspired this project.<br />
+			<b>[#]:</b> Rock wall.  This has no effect, other than blcking the player.  Can be destroyed.  A higher number takes a stronger attack to break.<br />
+			<b>{#}:</b> Mag wall.  This is hidden until walked upon, at which point it deals the player and knocks them back.  Cannot be passed until it is destroyed.  
+			A higher number takes a stronger attack to break.<br />
+			Enemy and treasure placement were part of the algorithm, but were later deferred to be placed by the parent running the algorithm.  This was to simplify the parameters of 
+			the algorithm, since many different enemy types and strengths, as well as treasures, would be available.
+		</p>
+		<div class="nav">
+			<a href="#top">Return to Top</a><br /><br />
+			<a href="../index.html">Return to Home</a>
+		</div>
+	</div>
+</body>
+</html>
