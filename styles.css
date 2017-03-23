@@ -20,6 +20,14 @@ body {
 	border-left-width:1px;
 	border-right-width:1px;
 }
+#frame table {
+	margin-left:50px;
+	padding:5px;
+	border:1px solid gray;
+}
+#frame td {
+	min-width:200px;
+}
 #name {
 	font-size:72px;
 }
